@@ -1,3 +1,5 @@
+#Найти точку разрыва 2го рода
+
 def find(x1, x2):
     def decorator(func):
         def wrapper(*args, **kwargs):
