@@ -1,5 +1,5 @@
 import pytest
-from calc import line, square, cube
+from equations.equations import line, square, cube
 
 
 @pytest.mark.parametrize('a, b, answer', [
