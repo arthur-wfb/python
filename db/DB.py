@@ -48,3 +48,9 @@ class DB:
         self.cursor.execute(query, (name, result))
         self.connect.commit()
         return True
+
+    @toDict
+    def getTestByDate(self, year, month, day):
+        query = "SELECT id, test, result, date FROM tests WHERE EXTRACT(YEAR FROM date_time) <= %s AND EXTRACT(MONTH FROM date_time) <= %s AND EXTRACT(DAY FROM date_time) <= %s"
+        self.cursor.execute(query, (year, month, day))
+        return self.cursor.fetchall()

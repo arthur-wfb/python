@@ -34,6 +34,13 @@ worksheet.write('G2', '=SUM(D:D)')
 chart = workbook.add_chart(dict(type='column'))
 chart.add_series(dict(values='=Sheet1!$F2'))
 chart.add_series(dict(values='=Sheet1!$G2'))
+chart.set_title(dict(name='Results'))
+chart.set_style(37)
+chart.set_plotarea(dict(
+    border={'color': 'red', 'width': 2, 'dash_type': 'dash'},
+    fill={'color': '#FFFFC2'}
+))
+worksheet.insert_chart('H7', chart)
 
 worksheet.insert_chart('H7', chart)
 
